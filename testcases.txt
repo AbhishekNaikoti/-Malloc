@@ -1,0 +1,17 @@
+/**
+ * Assignment 1: ++Malloc (testcases.txt)
+ * 
+ * @author Taran Suresh ts875
+ * @author Abhishek Naikoti an643
+ */
+
+workloadD:
+    malloc() 1 byte and then immediately frees it, similar to that of workloadA. It also has an added feature 
+    that will randomly choose two arbitrary numbers and see if they are equal, which then will try to free an invalid
+    pointer 2 bytes away. Two random numbers here are used to limit the number of times an error prints to the screen.
+    This workload mainly showcases how free() gracefully handles requests to free invalid pointers.
+
+workloadE:
+    This workload functions showcases a multitude of malloc() and free() features. It will malloc() three chunks of 200 bytes (as available in memory) at a time, 
+    and then will free two adjacent blocks at a time. This will showcase how the MetaData linked list coalesces adjacent free blocks, which can be seen visually by calling
+    the printMetaData() function. Also, it will try to allocate more memory than available, which shows how malloc() handles being requested more memory than available.
